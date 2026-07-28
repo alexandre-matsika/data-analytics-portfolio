@@ -1,12 +1,11 @@
-# Data Analytics Portfolio — Data Analyst orienté IA
+# Data Analytics Portfolio
 
-Bienvenue sur mon portfolio de projets en **Data Analytics**.
-Je me positionne comme **Data Analyst orienté IA** : j’utilise les techniques
-d’analyse de données et de machine learning pour **améliorer la prise de décision**
-et produire des **recommandations exploitables côté métier**.
 
-Ce portfolio présente à la fois mes **fondations techniques**, mes **projets analytiques**
-et des **cas plus avancés intégrant de l’IA et des pipelines data end-to-end**.
+Bienvenue sur mon portfolio de projets en  **Data Analytics** .
+
+Ce portfolio illustre mon évolution professionnelle du **développement VBA et du reporting** vers la **Data Analytics** et la  **Business Intelligence** .
+
+Vous y trouverez des projets autour de  **SQL** ,  **Python** ,  **Power BI** , de la visualisation de données et de l'analyse décisionnelle, ainsi que des travaux plus avancés consacrés au **Machine Learning** et à des pipelines de données de bout en bout.
 
 ---
 
