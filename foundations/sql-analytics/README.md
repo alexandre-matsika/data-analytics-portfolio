@@ -28,6 +28,7 @@ L’objectif est de démontrer :
     │   ├── intermediate/
     │   │   └── 05_ctes.sql
     │   └── advanced/
+    │   │   └── 06_window_functions.sql
     └── business-cases/
 
 ## Description des sections
