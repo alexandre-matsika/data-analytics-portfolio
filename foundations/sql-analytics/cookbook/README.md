@@ -17,7 +17,8 @@ L’objectif est de démontrer les compétences SQL essentielles pour l’analys
     │   └── 04_case_when.sql
     ├── intermediate/
     │   └── 05_ctes.sql
-    └── advanced/
+    ├── advanced/
+    │   ├── 06_window_functions.sql
 
 ---
 
@@ -54,18 +55,19 @@ Contenu actuel :
 
 ### `advanced/`
 
-Cette section accueillera des techniques plus avancées pour :
+Cette section accueille des techniques plus avancées pour :
 
 - approfondir l’analyse
-- calculer des indicateurs plus élaborés
+- effectuer des classements sans réduire la granularité des résultats
+- réaliser des calculs cumulatifs et des comparaisons entre lignes
 - améliorer la robustesse des requêtes
+
+Contenu actuel :
+
+- `06_window_functions.sql` : classement, comparaison entre lignes, calculs cumulatifs et analyses séquentielles avec les fonctions de fenêtre
 
 Contenu prévu :
 
-- fonctions de fenêtre
-- sous-requêtes avancées
-- analyse temporelle
-- calcul de KPI
 - contrôles qualité des données
 
 ---
@@ -104,6 +106,7 @@ L’idée n’est pas seulement de montrer la syntaxe SQL, mais aussi la manièr
 - `HAVING`
 - `CASE WHEN`
 - `CTE`
+- fonctions de fenêtre : `OVER`, `PARTITION BY`, `ROW_NUMBER`, `RANK`, `DENSE_RANK`, `LAG` et `LEAD`
 
 ---
 
@@ -111,7 +114,6 @@ L’idée n’est pas seulement de montrer la syntaxe SQL, mais aussi la manièr
 
 Les prochains fichiers qui viendront enrichir ce dossier sont notamment :
 
-- `06_window_functions.sql`
 - `07_subqueries.sql`
 - `08_time_series_analysis.sql`
 - `09_kpi_calculations.sql`
