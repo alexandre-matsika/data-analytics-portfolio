@@ -70,7 +70,7 @@ SELECT
     mr.month,
     mr.revenue,
     ROUND(ar.avg_monthly_revenue, 2) AS avg_monthly_revenue,
-    ROUND(mr.revenue - ar.avg_monthly_revenue, 2) AS variance_vs_average
+    ROUND(mr.revenue - ar.avg_monthly_revenue, 2) AS deviation_from_average
 FROM monthly_revenue mr
 CROSS JOIN average_revenue ar
 ORDER BY mr.month;
