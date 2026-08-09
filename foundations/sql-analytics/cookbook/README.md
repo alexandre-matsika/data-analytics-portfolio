@@ -16,7 +16,8 @@ L’objectif est de démontrer les compétences SQL essentielles pour l’analys
     │   ├── 03_group_by_aggregations.sql
     │   └── 04_case_when.sql
     ├── intermediate/
-    │   └── 05_ctes.sql
+    │   ├── 05_ctes.sql
+    │   └── 07_subqueries.sql
     ├── advanced/
     │   ├── 06_window_functions.sql
 
@@ -52,6 +53,7 @@ Cette section introduit des requêtes plus structurées pour :
 Contenu actuel :
 
 - `05_ctes.sql` : utilisation des CTE (`Common Table Expressions`) pour rendre les requêtes plus lisibles et maintenables
+- `07_subqueries.sql` : utilisation de sous-requêtes scalaires, corrélées et imbriquées avec `EXISTS` et `NOT EXISTS` pour effectuer des comparaisons, filtrages et analyses dynamiques
 
 ### `advanced/`
 
@@ -107,14 +109,14 @@ L’idée n’est pas seulement de montrer la syntaxe SQL, mais aussi la manièr
 - `CASE WHEN`
 - `CTE`
 - fonctions de fenêtre : `OVER`, `PARTITION BY`, `ROW_NUMBER`, `RANK`, `DENSE_RANK`, `LAG` et `LEAD`
+- sous-requêtes : sous-requêtes scalaires, sous-requêtes dans `FROM`, sous-requêtes corrélées, `EXISTS` et `NOT EXISTS`
 
 ---
 
 ## Suite prévue
 
-Les prochains fichiers qui viendront enrichir ce dossier sont notamment :
+Les prochains fichiers qui viendront enrichir ce dossier sont notamment 
 
-- `07_subqueries.sql`
 - `08_time_series_analysis.sql`
 - `09_kpi_calculations.sql`
 - `10_data_quality_checks.sql`
