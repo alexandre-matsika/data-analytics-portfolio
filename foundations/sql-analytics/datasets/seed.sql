@@ -23,6 +23,7 @@ INSERT INTO products (product_id, product_name, category_id, unit_price, cost_pr
 (106, 'Yoga Mat', 3, 30.00, 14.00, '2024-03-01'),
 (107, 'Dumbbell Set', 3, 90.00, 55.00, '2024-03-10'),
 (108, 'SQL for Analysts', 4, 40.00, 10.00, '2024-04-01');
+(109, 'Laptop Stand', 1, 55.00, 25.00, '2024-05-01');
 
 INSERT INTO orders (order_id, customer_id, order_date, status) VALUES
 (1001, 1, '2024-06-01', 'completed'),
