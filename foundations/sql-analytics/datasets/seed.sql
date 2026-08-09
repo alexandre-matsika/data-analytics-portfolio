@@ -7,6 +7,7 @@ INSERT INTO customers (customer_id, first_name, last_name, email, country, signu
 (6, 'Farid', 'Lamrani', 'farid.lamrani@email.com', 'Morocco', '2024-05-01'),
 (7, 'Grace', 'Lopez', 'grace.lopez@email.com', 'Spain', '2024-05-15'),
 (8, 'Hugo', 'Morel', 'hugo.morel@email.com', 'France', '2024-06-07');
+(9, 'Isabelle', 'Roux', 'isabelle.roux@email.com', 'France', '2024-07-20');
 
 INSERT INTO categories (category_id, category_name) VALUES
 (1, 'Electronics'),
