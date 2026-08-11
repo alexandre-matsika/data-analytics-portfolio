@@ -17,11 +17,11 @@ L’objectif est de démontrer les compétences SQL essentielles pour l’analys
     │   └── 04_case_when.sql
     ├── intermediate/
     │   ├── 05_ctes.sql
-    │   └── 07_subqueries.sql
-    ├── advanced/
-    │   ├── 06_window_functions.sql
-
----
+    │   ├── 07_subqueries.sql
+    │   └── 08_time_series_analysis.sql
+    │
+    └── advanced/
+        └── 06_window_functions.sql
 
 ## Organisation par niveau
 
@@ -54,6 +54,7 @@ Contenu actuel :
 
 - `05_ctes.sql` : utilisation des CTE (`Common Table Expressions`) pour rendre les requêtes plus lisibles et maintenables
 - `07_subqueries.sql` : utilisation de sous-requêtes scalaires, corrélées et imbriquées avec `EXISTS` et `NOT EXISTS` pour effectuer des comparaisons, filtrages et analyses dynamiques
+- `08_time_series_analysis.sql`: analyse temporelle : `DATE_TRUNC`, `EXTRACT`, agrégations mensuelles, chiffre d'affaires cumulé, croissance Month-over-Month et moyenne mobile
 
 ### `advanced/`
 
@@ -115,8 +116,7 @@ L’idée n’est pas seulement de montrer la syntaxe SQL, mais aussi la manièr
 
 ## Suite prévue
 
-Les prochains fichiers qui viendront enrichir ce dossier sont notamment 
+Les prochains fichiers qui viendront enrichir ce dossier sont notamment
 
-- `08_time_series_analysis.sql`
 - `09_kpi_calculations.sql`
 - `10_data_quality_checks.sql`
