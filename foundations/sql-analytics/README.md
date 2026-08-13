@@ -13,28 +13,28 @@ L’objectif est de démontrer :
 ## Structure du dossier
 
   sql-analytics/
-├── README.md
-├── datasets/
-│   ├── README.md
-│   ├── schema.sql
-│   └── seed.sql
-├── cookbook/
-│   ├── README.md
-│   ├── basics/
-│   │   ├── 01_basic_select_filter.sql
-│   │   ├── 02_joins.sql
-│   │   ├── 03_group_by_aggregations.sql
-│   │   └── 04_case_when.sql
-│   ├── intermediate/
-│   │   ├── 05_ctes.sql
-│   │   ├── 07_subqueries.sql
-│   │   ├── 08_time_series_analysis.sql
-│   │   └── 09_kpi_calculations.sql
-│   └── advanced/
-│       └── 06_window_functions.sql
-└── business-cases/
+	├── README.md
+	├── datasets/
+	│   ├── README.md
+	│   ├── schema.sql
+	│   └── seed.sql
+	├── cookbook/
+	│   ├── README.md
+	│   ├── basics/
+	│   │   ├── 01_basic_select_filter.sql
+	│   │   ├── 02_joins.sql
+	│   │   ├── 03_group_by_aggregations.sql
+	│   │   └── 04_case_when.sql
+	│   ├── intermediate/
+	│   │   ├── 05_ctes.sql
+	│   │   ├── 07_subqueries.sql
+	│   │   ├── 08_time_series_analysis.sql
+	│   │   └── 09_kpi_calculations.sql
+	│   └── advanced/
+	│       └── 06_window_functions.sql
+	└── business-cases/
 
-## Description des sections
+# Description des sections
 
 - `datasets/` : contient le schéma SQL et les données de démonstration utilisées dans cette section
 - `cookbook/` : regroupe les requêtes SQL classées par niveau de difficulté
