@@ -18,9 +18,10 @@ L’objectif est de démontrer les compétences SQL essentielles pour l’analys
     ├── intermediate/
     │   ├── 05_ctes.sql
     │   ├── 07_subqueries.sql
-    │   └── 08_time_series_analysis.sql
+    │   ├── 08_time_series_analysis.sql
+    │   └── 09_kpi_calculations.sql
     │
-    └── advanced/
+   └── advanced/
         └── 06_window_functions.sql
 
 ## Organisation par niveau
@@ -55,6 +56,7 @@ Contenu actuel :
 - `05_ctes.sql` : utilisation des CTE (`Common Table Expressions`) pour rendre les requêtes plus lisibles et maintenables
 - `07_subqueries.sql` : utilisation de sous-requêtes scalaires, corrélées et imbriquées avec `EXISTS` et `NOT EXISTS` pour effectuer des comparaisons, filtrages et analyses dynamiques
 - `08_time_series_analysis.sql`: analyse temporelle : `DATE_TRUNC`, `EXTRACT`, agrégations mensuelles, chiffre d'affaires cumulé, croissance Month-over-Month et moyenne mobile
+- `09_kpi_calculations.sql` : calcul de KPI métier tels que le chiffre d'affaires, le panier moyen, le revenu moyen par client, le taux de clients récurrents, le taux d'annulation, la marge brute, le taux de marge brute et la contribution au chiffre d'affaires par catégorie
 
 ### `advanced/`
 
@@ -111,12 +113,15 @@ L’idée n’est pas seulement de montrer la syntaxe SQL, mais aussi la manièr
 - `CTE`
 - fonctions de fenêtre : `OVER`, `PARTITION BY`, `ROW_NUMBER`, `RANK`, `DENSE_RANK`, `LAG` et `LEAD`
 - sous-requêtes : sous-requêtes scalaires, sous-requêtes dans `FROM`, sous-requêtes corrélées, `EXISTS` et `NOT EXISTS`
+- analyse temporelle : `DATE_TRUNC`, `EXTRACT`, agrégations mensuelles, chiffre d'affaires cumulé, croissance Month-over-Month et moyenne mobile
+- KPI métier : chiffre d'affaires, panier moyen (`Average Order Value`), clients actifs, revenu moyen par client et taux de clients récurrents
+- indicateurs de performance : taux d'annulation, marge brute, taux de marge brute et contribution au chiffre d'affaires
 
 ---
 
-## Suite prévue
+# Suite prévue
 
-Les prochains fichiers qui viendront enrichir ce dossier sont notamment
+Les prochains fichiers qui viendront enrichir ce dossier sont notamment :
 
-- `09_kpi_calculations.sql`
 - `10_data_quality_checks.sql`
+- `11_advanced_analytics.sql`
