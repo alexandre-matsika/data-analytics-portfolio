@@ -12,27 +12,31 @@ L’objectif est de démontrer :
 
 ## Structure du dossier
 
-  sql-analytics/
-	├── README.md
-	├── datasets/
-	│   ├── README.md
-	│   ├── schema.sql
-	│   └── seed.sql
-	├── cookbook/
-	│   ├── README.md
-	│   ├── basics/
-	│   │   ├── 01_basic_select_filter.sql
-	│   │   ├── 02_joins.sql
-	│   │   ├── 03_group_by_aggregations.sql
-	│   │   └── 04_case_when.sql
-	│   ├── intermediate/
-	│   │   ├── 05_ctes.sql
-	│   │   ├── 07_subqueries.sql
-	│   │   ├── 08_time_series_analysis.sql
-	│   │   └── 09_kpi_calculations.sql
-	│   └── advanced/
-	│       └── 06_window_functions.sql
-	└── business-cases/
+## Structure du dossier
+
+```text
+sql-analytics/
+├── README.md
+├── datasets/
+│   ├── README.md
+│   ├── schema.sql
+│   └── seed.sql
+├── cookbook/
+│   ├── README.md
+│   ├── basics/
+│   │   ├── 01_basic_select_filter.sql
+│   │   ├── 02_joins.sql
+│   │   ├── 03_group_by_aggregations.sql
+│   │   └── 04_case_when.sql
+│   ├── intermediate/
+│   │   ├── 05_ctes.sql
+│   │   ├── 07_subqueries.sql
+│   │   ├── 08_time_series_analysis.sql
+│   │   └── 09_kpi_calculations.sql
+│   └── advanced/
+│       └── 06_window_functions.sql
+└── business-cases/
+```
 
 # Description des sections
 
@@ -120,7 +124,6 @@ Au-delà de la syntaxe SQL, cette section montre comment :
 - préparer des bases solides pour des projets analytiques plus complets
 
 Elle constitue une étape fondatrice avant le développement de projets plus avancés dans les sections `projects/analytics/`, `projects/bi/`, `projects/ml/` et `projects/end-to-end/`.
-
 
 ## Suite prévue
 
