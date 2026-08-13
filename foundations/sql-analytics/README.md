@@ -12,24 +12,27 @@ L’objectif est de démontrer :
 
 ## Structure du dossier
 
-    sql-analytics/
-    ├── README.md
-    ├── datasets/
-    │   ├── README.md
-    │   ├── schema.sql
-    │   └── seed.sql
-    ├── cookbook/
-    │   ├── README.md
-    │   ├── basics/
-    │   │   ├── 01_basic_select_filter.sql
-    │   │   ├── 02_joins.sql
-    │   │   ├── 03_group_by_aggregations.sql
-    │   │   └── 04_case_when.sql
-    │   ├── intermediate/
-    │   │   └── 05_ctes.sql
-    │   └── advanced/
-    │   │   └── 06_window_functions.sql
-    └── business-cases/
+  sql-analytics/
+├── README.md
+├── datasets/
+│   ├── README.md
+│   ├── schema.sql
+│   └── seed.sql
+├── cookbook/
+│   ├── README.md
+│   ├── basics/
+│   │   ├── 01_basic_select_filter.sql
+│   │   ├── 02_joins.sql
+│   │   ├── 03_group_by_aggregations.sql
+│   │   └── 04_case_when.sql
+│   ├── intermediate/
+│   │   ├── 05_ctes.sql
+│   │   ├── 07_subqueries.sql
+│   │   ├── 08_time_series_analysis.sql
+│   │   └── 09_kpi_calculations.sql
+│   └── advanced/
+│       └── 06_window_functions.sql
+└── business-cases/
 
 ## Description des sections
 
@@ -42,7 +45,7 @@ L’objectif est de démontrer :
 
 ## Compétences SQL démontrées
 
-Cette section a pour objectif de couvrir progressivement les compétences suivantes :
+Cette section couvre actuellement les compétences suivantes :
 
 - sélection, filtrage et tri de données
 - jointures entre plusieurs tables
@@ -52,10 +55,7 @@ Cette section a pour objectif de couvrir progressivement les compétences suivan
 - sous-requêtes
 - fonctions de fenêtre
 - analyse temporelle
-- calcul de KPI
-- contrôles qualité des données
-
----
+- calcul de KPI métier
 
 ## Dataset utilisé
 
@@ -84,24 +84,24 @@ Les projets métier plus avancés, spécialisés et orientés secteur seront dé
 
 À ce stade, cette section contient :
 
-- un dataset SQL de démonstration
+- un dataset e-commerce de démonstration
 - un cookbook structuré par niveaux
-- plusieurs fichiers couvrant les bases de l’analyse SQL
-- une progression vers des cas métier plus avancés
-
----
+- des exercices couvrant les fondamentaux SQL, les CTE, les sous-requêtes et les fonctions de fenêtre
+- des analyses temporelles et des calculs de KPI métier
+- une progression vers des contrôles qualité et des cas métier plus avancés
 
 ## Exemples de questions traitées
 
 Voici quelques exemples de questions auxquelles les requêtes de cette section permettent de répondre :
 
 - Quels sont les clients les plus actifs ?
-- Quel est le chiffre d’affaires par commande ou par catégorie ?
-- Comment segmenter les clients selon leur valeur ?
-- Comment structurer une requête complexe avec des CTE ?
-- Comment préparer un jeu de données pour une analyse métier plus avancée ?
-
----
+- Quel chiffre d’affaires est généré par mois ou par catégorie ?
+- Comment évolue le chiffre d’affaires dans le temps ?
+- Quel est le panier moyen des commandes finalisées ?
+- Quelle proportion des clients effectue plusieurs commandes ?
+- Quels produits génèrent les marges brutes les plus élevées ?
+- Quelle est la contribution de chaque catégorie au chiffre d’affaires ?
+- Comment utiliser des CTE, sous-requêtes et fonctions de fenêtre pour structurer des analyses plus complexes ?
 
 ## Outils
 
@@ -121,13 +121,12 @@ Au-delà de la syntaxe SQL, cette section montre comment :
 
 Elle constitue une étape fondatrice avant le développement de projets plus avancés dans les sections `projects/analytics/`, `projects/bi/`, `projects/ml/` et `projects/end-to-end/`.
 
----
 
 ## Suite prévue
 
 Les prochaines étapes de cette section incluent notamment :
 
-- l’ajout de requêtes avancées dans `cookbook/advanced/`
-- l’enrichissement du niveau intermédiaire
+- `10_data_quality_checks.sql`
+- `11_advanced_analytics.sql`
 - la création de mini cas métier dans `business-cases/`
 - l’ajout d’un dictionnaire de données dans `datasets/`
