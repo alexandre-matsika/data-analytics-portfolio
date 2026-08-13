@@ -20,8 +20,7 @@ L’objectif est de démontrer les compétences SQL essentielles pour l’analys
     │   ├── 07_subqueries.sql
     │   ├── 08_time_series_analysis.sql
     │   └── 09_kpi_calculations.sql
-    │
-   └── advanced/
+    └── advanced/
         └── 06_window_functions.sql
 
 ## Organisation par niveau
