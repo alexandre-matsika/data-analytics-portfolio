@@ -271,3 +271,232 @@ VALUES
 (5022, 1022, '2024-08-18', 'paypal', 170.00)
 
 ON CONFLICT DO NOTHING;
+
+---------------------------------------------------------
+-- Intentional Data Quality Issues
+--
+-- These records are intentionally inconsistent and are
+-- used only to demonstrate data quality checks in
+-- 10_data_quality_checks.sql.
+---------------------------------------------------------
+
+
+---------------------------------------------------------
+-- 1. Potential duplicate customer
+--
+-- Same first name, last name and country as customer 1,
+-- but a different customer_id and email.
+---------------------------------------------------------
+INSERT INTO customers (
+    customer_id,
+    first_name,
+    last_name,
+    email,
+    country,
+    signup_date
+)
+VALUES (
+    10,
+    'Alice',
+    'Martin',
+    'alice.martin.duplicate@email.com',
+    'France',
+    '2024-08-01'
+)
+ON CONFLICT DO NOTHING;
+
+
+---------------------------------------------------------
+-- 2. Customer with incomplete business information
+--
+-- Empty strings are allowed by NOT NULL constraints,
+-- but they may still represent poor data quality.
+---------------------------------------------------------
+INSERT INTO customers (
+    customer_id,
+    first_name,
+    last_name,
+    email,
+    country,
+    signup_date
+)
+VALUES (
+    11,
+    'Lucas',
+    'Moreau',
+    'lucas.moreau@email.com',
+    '',
+    '2024-08-10'
+)
+ON CONFLICT DO NOTHING;
+
+
+---------------------------------------------------------
+-- 3. Product with negative gross margin potential
+--
+-- Cost price is higher than selling price.
+---------------------------------------------------------
+INSERT INTO products (
+    product_id,
+    product_name,
+    category_id,
+    unit_price,
+    cost_price,
+    created_at
+)
+VALUES (
+    110,
+    'Budget Headphones',
+    1,
+    30.00,
+    38.00,
+    '2024-06-01'
+)
+ON CONFLICT DO NOTHING;
+
+
+---------------------------------------------------------
+-- 4. Customer whose order predates signup
+---------------------------------------------------------
+INSERT INTO customers (
+    customer_id,
+    first_name,
+    last_name,
+    email,
+    country,
+    signup_date
+)
+VALUES (
+    12,
+    'Sophie',
+    'Leroy',
+    'sophie.leroy@email.com',
+    'France',
+    '2024-09-01'
+)
+ON CONFLICT DO NOTHING;
+
+
+INSERT INTO orders (
+    order_id,
+    customer_id,
+    order_date,
+    status
+)
+VALUES (
+    1023,
+    12,
+    '2024-08-15',
+    'cancelled'
+)
+ON CONFLICT DO NOTHING;
+
+
+INSERT INTO order_items (
+    order_item_id,
+    order_id,
+    product_id,
+    quantity,
+    unit_price
+)
+VALUES (
+    39,
+    1023,
+    101,
+    1,
+    25.00
+)
+ON CONFLICT DO NOTHING;
+
+
+---------------------------------------------------------
+-- 5. Historical charged price different from current
+-- product price
+--
+-- This is not necessarily an error: it could represent
+-- a promotion or historical price change. It should
+-- therefore be investigated rather than automatically
+-- classified as invalid.
+---------------------------------------------------------
+INSERT INTO orders (
+    order_id,
+    customer_id,
+    order_date,
+    status
+)
+VALUES (
+    1024,
+    8,
+    '2024-08-22',
+    'completed'
+)
+ON CONFLICT DO NOTHING;
+
+
+INSERT INTO order_items (
+    order_item_id,
+    order_id,
+    product_id,
+    quantity,
+    unit_price
+)
+VALUES (
+    40,
+    1024,
+    103,
+    1,
+    42.00
+)
+ON CONFLICT DO NOTHING;
+
+
+INSERT INTO payments (
+    payment_id,
+    order_id,
+    payment_date,
+    payment_method,
+    amount
+)
+VALUES (
+    5023,
+    1024,
+    '2024-08-22',
+    'card',
+    42.00
+)
+ON CONFLICT DO NOTHING;
+
+
+---------------------------------------------------------
+-- 6. Completed order without payment
+---------------------------------------------------------
+INSERT INTO orders (
+    order_id,
+    customer_id,
+    order_date,
+    status
+)
+VALUES (
+    1025,
+    7,
+    '2024-08-25',
+    'completed'
+)
+ON CONFLICT DO NOTHING;
+
+
+INSERT INTO order_items (
+    order_item_id,
+    order_id,
+    product_id,
+    quantity,
+    unit_price
+)
+VALUES (
+    41,
+    1025,
+    106,
+    1,
+    30.00
+)
+ON CONFLICT DO NOTHING;
