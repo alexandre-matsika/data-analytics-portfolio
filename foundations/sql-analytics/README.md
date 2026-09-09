@@ -12,8 +12,6 @@ L’objectif est de démontrer :
 
 ## Structure du dossier
 
-## Structure du dossier
-
 ```text
 sql-analytics/
 ├── README.md

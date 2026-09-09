@@ -1,11 +1,8 @@
 # Python Data Cleaning Cookbook
 
-Ce dossier contient un **cookbook de data cleaning en Python**,
-conçu comme une base réutilisable pour les projets d’analyse de données
-et de machine learning.
+Ce dossier appartient à la section `Foundations` de ce portfolio. Il regroupe les notebooks, exercices et jeux de données qui m'ont permis d'acquérir les bases du nettoyage et de la préparation des données avec Python et Pandas.
 
-L’objectif est de regrouper des **recettes pratiques**, inspirées de cas réels,
-pour nettoyer, contrôler et fiabiliser des données avant toute analyse ou modélisation.
+L’objectif est de regrouper des **recettes pratiques**, inspirées de cas réels, pour nettoyer, contrôler et fiabiliser des données avant toute analyse ou modélisation.
 
 ---
 
@@ -25,7 +22,17 @@ Ce cookbook privilégie des solutions simples et explicables,
 proches de ce qui est réellement pratiqué en entreprise,
 plutôt que des approches théoriques ou sur-optimisées.
 
-## 📁 Structure du dossier
+---
+
+📌 Statut
+
+🟡 En cours d'enrichissement
+
+Cette bibliothèque est amenée à évoluer progressivement au fur et à mesure de mon apprentissage de Python et de Pandas.
+
+---
+
+📁 Structure du dossier
 
 ```
 python-data-cleaning/
