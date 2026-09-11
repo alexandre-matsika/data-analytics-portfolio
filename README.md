@@ -31,7 +31,7 @@ Projet de Business Intelligence reproduisant un cas d'étude professionnel, de l
 | Conception du modèle de données | ✅     |
 | Revue de conception               | ✅     |
 | Implémentation PostgreSQL        | ⏳     |
-| Analyse SQL                       |        |
+| Analyse SQL                       | ⏳     |
 | Développement Power BI           | ⏳     |
 | Tableau de bord Power BI          | ⏳     |
 
