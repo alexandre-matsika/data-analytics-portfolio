@@ -23,19 +23,19 @@ Projet de Business Intelligence reproduisant un cas d'étude professionnel, de l
 * DAX ;
 * documentation.
 
-
-| Étape                          | Statut      |
-| ------------------------------- | ----------- |
-| Analyse du besoin métier       | ✅          |
-| Définition des KPI             | ✅          |
-| Modélisation des données (V1) | ✅          |
-| Revue de conception             | 🔄 En cours |
-| Développement SQL (PostgreSQL) | ⏳          |
-| Développement Power BI         | ⏳          |
-| Documentation finale            | ⏳          |
+| Étape                            | Statut |
+| --------------------------------- | ------ |
+| Kick-off                          | ✅     |
+| Analyse du besoin métier         | ✅     |
+| Définition des KPI               | ✅     |
+| Conception du modèle de données | ✅     |
+| Revue de conception               | ✅     |
+| Implémentation PostgreSQL        | ⏳     |
+| Analyse SQL                       |        |
+| Développement Power BI           | ⏳     |
+| Tableau de bord Power BI          | ⏳     |
 
 ## 🧠 Technologies utilisées dans ce portfolio
-
 
 - SQL (PostgreSQL)
 - Power BI

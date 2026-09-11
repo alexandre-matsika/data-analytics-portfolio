@@ -32,11 +32,48 @@ Le projet couvre l'ensemble du cycle de développement d'une solution BI : prép
 
 ---
 
+## Structure du projet
 
-
-
-
-
+```
+NovaRetail-BI/
+│
+├── README.md
+│
+├── docs/
+│   ├── images/
+│   │   ├── data_model_v1.png
+│   │   ├── data_model_v2.png
+│   │   ├── dashboard_sales.png
+│   │   └── dashboard_products.png
+│   │
+│   ├── 01_Kickoff.md
+│   ├── 02_Business_Requirements.md
+│   ├── 03_Design_Review.md
+│   ├── 04_PostgreSQL_Implementation.md
+│   ├── 05_PowerBI_Model.md
+│   └── 06_Dashboard_Design.md
+│
+├── database/
+│   ├── schema.sql
+│   ├── seed.sql
+│   └── README.md
+│
+├── powerbi/
+│   ├── NovaRetail.pbix
+│   ├── dax/
+│   └── README.md
+│
+├── sql/
+│   ├── 01_kpis.sql
+│   ├── 02_sales_analysis.sql
+│   ├── 03_customer_analysis.sql
+│   └── README.md
+│
+└── data/
+    ├── raw/
+    ├── processed/
+    └── README.md
+```
 
 
 ## À propos de ce projet
