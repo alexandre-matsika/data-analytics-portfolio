@@ -32,12 +32,14 @@ CREATE TABLE IF NOT EXISTS dim_produit (
     marque VARCHAR(100) NOT NULL,
     fournisseur VARCHAR(100) NOT NULL,
     couleur VARCHAR(100),
-    taille VARCHAR(5),
+    taille VARCHAR(20),
     poids_kg NUMERIC(10,3) CHECK (poids_kg > 0),
     capacite_stockage_go INTEGER CHECK (capacite_stockage_go > 0),
     gamme VARCHAR(50),
     saison VARCHAR(100),
     prix_catalogue NUMERIC(10,2) NOT NULL CHECK (prix_catalogue > 0),
+    modele VARCHAR(100),
+    type_produit VARCHAR(100) NOT NULL,
 
     CONSTRAINT chk_code_produit_non_vide
         CHECK (LENGTH(TRIM(code_produit)) > 0),
@@ -55,8 +57,12 @@ CREATE TABLE IF NOT EXISTS dim_produit (
         CHECK (LENGTH(TRIM(marque)) > 0),
 
     CONSTRAINT chk_fournisseur_non_vide
-        CHECK (LENGTH(TRIM(fournisseur)) > 0)
+        CHECK (LENGTH(TRIM(fournisseur)) > 0),
+    
+    CONSTRAINT chk_type_produit_non_vide
+        CHECK (LENGTH(TRIM(type_produit)) > 0)
 );
+
 
 -- ============================================================
 -- DIMENSION: CLIENT
@@ -141,9 +147,9 @@ CREATE TABLE IF NOT EXISTS dim_commercial (
     code_commercial VARCHAR(50) UNIQUE NOT NULL,
     nom_commercial VARCHAR(100) NOT NULL,
     prenom_commercial VARCHAR(100) NOT NULL,
-    equipe VARCHAR(100),
+    equipe VARCHAR(100) NOT NULL,
     date_recrutement DATE NOT NULL,
-    manager VARCHAR(100),
+    manager VARCHAR(100) NOT NULL,
 
     CONSTRAINT chk_code_commercial_non_vide
         CHECK (LENGTH(TRIM(code_commercial)) > 0),
@@ -226,20 +232,31 @@ CREATE TABLE IF NOT EXISTS dim_date (
 --   quantite
 --   prix_unitaire
 --   cout_unitaire
+--
+-- taux_remise stores the discount rate applied to the
+-- catalogue price for each sales line.
 -- ============================================================
+
 CREATE TABLE IF NOT EXISTS fact_vente (
     id_ligne_vente INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    -- Business transaction identifier.
-    -- Not unique because one transaction may contain multiple product lines.
     code_vente VARCHAR(50) NOT NULL,
     id_produit INTEGER NOT NULL,
     id_client INTEGER NOT NULL,
     id_magasin INTEGER NOT NULL,
     id_commercial INTEGER NOT NULL,
     id_date INTEGER NOT NULL,
-    quantite INTEGER NOT NULL CHECK (quantite > 0),
-    prix_unitaire NUMERIC(10,2) NOT NULL CHECK (prix_unitaire > 0),
-    cout_unitaire NUMERIC(10,2) NOT NULL CHECK (cout_unitaire > 0),
+
+    quantite INTEGER NOT NULL
+        CHECK (quantite > 0),
+
+    prix_unitaire NUMERIC(10,2) NOT NULL
+        CHECK (prix_unitaire > 0),
+
+    cout_unitaire NUMERIC(10,2) NOT NULL
+        CHECK (cout_unitaire > 0),
+
+    taux_remise NUMERIC(5,2) NOT NULL
+        CHECK (taux_remise >= 0 AND taux_remise <= 1),
 
     FOREIGN KEY (id_produit) REFERENCES dim_produit(id_produit),
     FOREIGN KEY (id_client) REFERENCES dim_client(id_client),

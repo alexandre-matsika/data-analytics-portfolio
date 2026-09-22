@@ -1,9 +1,7 @@
 # Design Review – NovaRetail BI
 
-**Date :** 11 septembre 2026
-
-**Version :** V2
-
+**Version initiale de la revue :** V2 — 11 septembre 2026
+**Version actuelle :** V3 — 22 septembre 2026
 **Statut :** Validé
 
 ---
@@ -73,7 +71,7 @@ Les décisions suivantes ont été retenues :
 
 ---
 
-## 6. Modèle V2 retenu
+## 6. Modèle V2 – passage au schéma en étoile
 
 Le modèle final est constitué :
 
@@ -103,25 +101,48 @@ La table de faits contient les mesures métier :
 
 ---
 
-## 7. Justification des choix
+## 7. Évolution vers le modèle V3
 
-Le modèle V2 présente plusieurs avantages :
+Après l'implémentation du modèle dans PostgreSQL et la préparation
+des données de vente, plusieurs ajustements ont été apportés afin
+d'aligner le modèle conceptuel avec le modèle physique.
 
-* structure conforme aux bonnes pratiques du schéma en étoile ;
-* simplification des relations dans Power BI ;
-* modèle plus lisible ;
-* meilleures performances analytiques ;
-* évolution facilitée du tableau de bord.
+Les principales évolutions sont :
+
+* ajout de clés métier dans les dimensions :
+  `code_produit`, `code_client`, `code_magasin` et `code_commercial` ;
+* ajout de `id_ligne_vente` comme clé technique de la table de faits ;
+* ajout de `code_vente` pour identifier une transaction métier pouvant
+  comporter plusieurs lignes de produits ;
+* définition du grain de `Fact_Vente` :
+  une ligne représente un produit au sein d'une transaction ;
+* conservation de faits atomiques :
+  `quantite`, `prix_unitaire`, `cout_unitaire` et `taux_remise` ;
+* suppression de `montant` et `cout` en tant que valeurs agrégées
+  stockées, ces indicateurs pouvant être calculés à partir des faits
+  atomiques ;
+* retrait de `statut` du périmètre V1 du dashboard, aucun scénario
+  d'annulation ou de retour n'étant modélisé à ce stade.
+
+<p align="center">
+  <img src="images/data_model_v3.png" alt="Modèle décisionnel NovaRetail V3" width="1200">
+</p>
 
 ---
 
 ## 8. Prochaines étapes
 
-La revue de conception a permis de faire évoluer le modèle initial vers une architecture décisionnelle adaptée à Power BI.
+La version V3 du modèle est désormais implémentée dans PostgreSQL
+et les données de vente ont été générées et chargées dans la table
+`fact_vente`.
 
-Ce modèle servira de référence pour les prochaines étapes du projet, notamment la création de la base PostgreSQL, l'implémentation des requêtes SQL et le développement du tableau de bord.
+Les prochaines étapes du projet portent sur :
 
----
+* la mise en place des contrôles de qualité des données ;
+* la réalisation des requêtes d'analyse SQL ;
+* la préparation et la modélisation des données dans Power BI ;
+* la création des mesures DAX ;
+* la construction du tableau de bord.
 
 ## 9. Enseignements tirés de la revue
 
@@ -131,13 +152,8 @@ Cette revue de conception a permis de mettre en évidence les différences entre
 
 ## 10. Décision
 
-La version V2 du modèle de données est validée.
+La version V3 constitue désormais le modèle de référence du projet
+NovaRetail BI.
 
-Elle constitue désormais la référence du projet NovaRetail BI.
-
-Les prochaines étapes porteront sur :
-
-- l'implémentation PostgreSQL ;
-- l'alimentation de la base ;
-- les requêtes analytiques ;
-- la construction du modèle Power BI.
+Elle reflète le schéma effectivement implémenté dans PostgreSQL et
+servira de base aux analyses SQL et au modèle Power BI.
