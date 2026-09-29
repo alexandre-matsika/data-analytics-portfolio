@@ -6,63 +6,111 @@ Je m'appelle Alexandre.
 
 Après plusieurs années d'expérience dans le développement VBA, le reporting, l'automatisation et la qualité des données, j'oriente aujourd'hui mon expérience vers la **Data Analytics** et la **Business Intelligence**.
 
-Ce dépôt documente cette évolution.
+Ce dépôt documente cette évolution à travers des projets, des exercices techniques et des cas d'étude permettant de mettre en pratique et de démontrer mes compétences en analyse de données et Business Intelligence.
 
-Ce dépôt documente progressivement les projets que je réalise afin de développer et démontrer mes compétences en SQL, PostgreSQL, Power BI, Python et Business Intelligence.
+---
 
-**Projet principal :**
+## 🚀 Projets
 
-🟡 NovaRetail BI
+### NovaRetail BI
 
-Projet de Business Intelligence reproduisant un cas d'étude professionnel, de la compréhension du besoin métier jusqu'à la réalisation d'un tableau de bord Power BI :
+Projet de Business Intelligence reproduisant un cas d'étude professionnel, de l'analyse du besoin métier jusqu'à la réalisation d'un tableau de bord Power BI.
 
-* analyse du besoin métier ;
-* modélisation de données ;
-* SQL PostgreSQL ;
-* Power BI ;
-* DAX ;
-* documentation.
+Le projet couvre notamment :
 
-| Étape                            | Statut |
-| --------------------------------- | ------ |
-| Kick-off                          | ✅     |
-| Analyse du besoin métier         | ✅     |
-| Définition des KPI               | ✅     |
-| Conception du modèle de données | ✅     |
-| Revue de conception               | ✅     |
-| Implémentation PostgreSQL        | ✅     |
-| Contrôles qualité des données  | ✅     |
-| Analyse SQL                       | ✅     |
-| Développement Power BI           | ⏳     |
-| Tableau de bord Power BI          | ⏳     |
+- l'analyse du besoin métier ;
+- la définition des KPI ;
+- la modélisation dimensionnelle ;
+- PostgreSQL et SQL ;
+- la qualité des données ;
+- l'analyse métier ;
+- Power BI ;
+- Power Query ;
+- DAX ;
+- la documentation technique.
 
-## 🧠 Technologies utilisées dans ce portfolio
+**Statut :** 🟡 En cours
 
-- SQL (PostgreSQL)
-- Power BI
-- DAX
-- Power Query
-- Python (Pandas)
+📁 `projects/business-intelligence/NovaRetail-BI/`
+
+Les détails du projet, son architecture et son état d'avancement sont documentés dans son propre `README.md`.
+
+---
+
+## 🧠 Technologies et compétences
+
+Ce portfolio met progressivement en pratique les technologies et compétences suivantes :
+
+### Data & SQL
+
+- SQL
+- PostgreSQL
+- Modélisation dimensionnelle
+- Data Quality
 - Data Cleaning
+
+### Business Intelligence
+
+- Power BI
+- Power Query
+- DAX
 - Data Visualization
+- KPI et analyse métier
+
+### Programmation et automatisation
+
+- Python
+- Pandas
+- VBA
+- Automatisation
+
+### Outils et méthodes
+
 - Git
+- Documentation technique
+- Analyse des besoins métier
 
 ---
 
 ## 📁 Structure du repository
 
-```
+```text
 data-analytics-portfolio/
+│
 ├── foundations/
 │   └── sql-analytics/
 │
 ├── projects/
 │   └── business-intelligence/
+│       └── NovaRetail-BI/
 │
-├── README.md
-└── assets/
+├── assets/
+│
+└── README.md
 ```
 
-**Foundations** regroupe les ressources d'apprentissage et les exercices techniques qui servent de base à la réalisation des projets.
+### Foundations
 
-**Projects** regroupe des projets complets reproduisant des cas d'usage professionnels afin de mettre en pratique les compétences acquises dans Foundations.
+`foundations/` regroupe les ressources d'apprentissage et les exercices techniques servant de base à la réalisation des projets.
+
+### Projects
+
+`projects/` regroupe des projets complets reproduisant des cas d'usage professionnels afin de mettre en pratique les compétences développées dans le portfolio.
+
+Chaque projet possède sa propre documentation décrivant son contexte, ses objectifs, son architecture, les technologies utilisées et les différentes étapes de sa réalisation.
+
+---
+
+## 🎯 Objectif du portfolio
+
+L'objectif de ce portfolio est de présenter une démarche complète d'analyse de données, allant de la compréhension d'un besoin métier jusqu'à la production d'analyses et de solutions décisionnelles.
+
+Les différents projets permettent progressivement de mettre en pratique :
+
+- la compréhension et la formalisation des besoins métier ;
+- la préparation et le contrôle de la qualité des données ;
+- la modélisation des données ;
+- l'analyse avec SQL et Python ;
+- la définition et le calcul d'indicateurs de performance ;
+- la conception de modèles et tableaux de bord Power BI ;
+- la restitution d'analyses utiles à la prise de décision.
