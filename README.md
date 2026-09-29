@@ -4,7 +4,7 @@ Bienvenue sur mon portfolio.
 
 Je m'appelle Alexandre.
 
-Après plusieurs années d'expérience dans le développement VBA, le reporting et la qualité des données, j'ai entrepris une transition vers le métier de  **Data Analyst** .
+Après plusieurs années d'expérience dans le développement VBA, le reporting, l'automatisation et la qualité des données, j'oriente aujourd'hui mon expérience vers la **Data Analytics** et la **Business Intelligence**.
 
 Ce dépôt documente cette évolution.
 
@@ -30,8 +30,9 @@ Projet de Business Intelligence reproduisant un cas d'étude professionnel, de l
 | Définition des KPI               | ✅     |
 | Conception du modèle de données | ✅     |
 | Revue de conception               | ✅     |
-| Implémentation PostgreSQL        | ⏳     |
-| Analyse SQL                       | ⏳     |
+| Implémentation PostgreSQL        | ✅     |
+| Contrôles qualité des données  | ✅     |
+| Analyse SQL                       | ✅     |
 | Développement Power BI           | ⏳     |
 | Tableau de bord Power BI          | ⏳     |
 
