@@ -245,6 +245,7 @@ La documentation du projet suit les différentes étapes de sa réalisation :
 - `docs/05_PowerBI_Model.md` - connexion PostgreSQL, préparation des données, modèle Power BI et mesures DAX ;
 - `docs/06_Dashboard_Design.md` - structure, conception visuelle et choix analytiques du tableau de bord ;
 - `docs/07_Business_Insights.md` - interprétation des résultats, principaux enseignements, recommandations et limites analytiques.
+- `docs/08_Data_Dictionary.md` - dictionnaire des données, description des tables, colonnes, types, clés et règles de gestion
 
 ## À propos de ce projet
 
