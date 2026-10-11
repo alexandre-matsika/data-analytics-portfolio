@@ -23,13 +23,13 @@ Le projet couvre notamment :
 - la modélisation dimensionnelle ;
 - PostgreSQL et SQL ;
 - la qualité des données ;
-- l'analyse métier ;
 - Power BI ;
 - Power Query ;
 - DAX ;
-- la documentation technique.
+- l'interprétation des résultats et les recommandations métier ;
+- la documentation technique, fonctionnelle et analytique.
 
-**Statut :** 🟡 En cours
+**Statut :** 🟢 Terminé
 
 📁 `projects/business-intelligence/NovaRetail-BI/`
 

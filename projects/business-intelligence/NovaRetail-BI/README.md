@@ -43,7 +43,8 @@ Le projet couvre notamment :
 - l'analyse métier avec SQL ;
 - la préparation et la modélisation des données dans Power BI ;
 - la création de mesures DAX ;
-- la conception d'un tableau de bord interactif.
+- la conception d'un tableau de bord interactif ;
+- l'interprétation des résultats et la formulation de recommandations métier.
 
 ---
 
@@ -120,6 +121,52 @@ Les contrôles de qualité sont regroupés dans `database/quality_checks.sql`.
 
 ---
 
+## Résultats clés
+
+L'analyse des ventes sur la période 2023–2025 met notamment en évidence :
+
+- **4,25 M€ de chiffre d'affaires** pour **10 000 transactions** et **22 795 unités vendues** ;
+- environ **956 K€ de marge brute**, soit un **taux de marge brute global de 22,5 %** ;
+- une croissance du chiffre d'affaires de **27,40 % en 2024**, puis de **11,06 % en 2025** ;
+- des profils produits différents entre contribution au chiffre d'affaires et rentabilité relative ;
+- une forte concentration de l'activité commerciale au sein de l'équipe Nord ;
+- un chiffre d'affaires moyen par jour environ **10 % plus élevé le week-end qu'en semaine**.
+
+L'analyse détaillée, les interprétations et les recommandations associées sont disponibles dans `docs/07_Business_Insights.md`.
+
+---
+
+## Aperçu du dashboard
+
+Le rapport Power BI est organisé en quatre vues analytiques :
+
+1. **Vue exécutive** — synthèse des principaux KPI et tendances ;
+2. **Produits & Magasins** — analyse du chiffre d'affaires, de la marge et des performances produits et magasins ;
+3. **Performance commerciale** — analyse des commerciaux et des équipes ;
+4. **Analyse temporelle** — évolution des performances et comparaison des périodes.
+
+### Vue exécutive
+
+![Vue exécutive du dashboard NovaRetail](docs/images/dashboard_executive_overview.png)
+
+### Autres vues du rapport
+
+#### Produits & Magasins
+
+![Produits et magasins](docs/images/dashboard_products_stores.png)
+
+#### Performance commerciale
+
+![Performance commerciale](docs/images/dashboard_sales_performance.png)
+
+#### Analyse temporelle
+
+![Analyse temporelle](docs/images/dashboard_time_analysis.png)
+
+La conception détaillée du rapport et les choix analytiques sont documentés dans `docs/06_Dashboard_Design.md`.
+
+---
+
 ## Structure du projet
 
 ```text
@@ -132,10 +179,17 @@ NovaRetail-BI/
 │   ├── 02_Business_Requirements.md
 │   ├── 03_Design_Review.md
 │   ├── 04_PostgreSQL_Implementation.md
+│   ├── 05_PowerBI_Model.md
+│   ├── 06_Dashboard_Design.md
+│   ├── 07_Business_Insights.md
 │   └── images/
 │       ├── data_model_v1.png
 │       ├── data_model_v2.png
-│       └── data_model_v3.png
+│       ├── data_model_v3.png
+│       ├── dashboard_executive_overview.png
+│       ├── dashboard_products_stores.png
+│       ├── dashboard_sales_performance.png
+│       └── dashboard_time_analysis.png
 │
 ├── database/
 │   ├── schema.sql
@@ -146,8 +200,6 @@ NovaRetail-BI/
 │
 └── powerbi/
 ```
-
-Les prochaines phases du projet ajouteront notamment la documentation du modèle Power BI et de la conception du tableau de bord.
 
 ---
 
@@ -164,20 +216,21 @@ Les prochaines phases du projet ajouteront notamment la documentation du modèle
 
 ## État d'avancement
 
-| Étape                            | Statut |
-| --------------------------------- | ------ |
-| Kick-off                          | ✅     |
-| Analyse du besoin métier         | ✅     |
-| Définition des KPI               | ✅     |
-| Conception du modèle de données | ✅     |
-| Revue de conception               | ✅     |
-| Implémentation PostgreSQL        | ✅     |
-| Génération des données         | ✅     |
-| Contrôles qualité des données  | ✅     |
-| Analyse SQL                       | ✅     |
-| Modélisation Power BI            | ⏳     |
-| Mesures DAX                       | ⏳     |
-| Tableau de bord Power BI          | ⏳     |
+| Étape                                    | Statut |
+| ----------------------------------------- | ------ |
+| Kick-off                                  | ✅     |
+| Analyse du besoin métier                 | ✅     |
+| Définition des KPI                       | ✅     |
+| Conception du modèle de données         | ✅     |
+| Revue de conception                       | ✅     |
+| Implémentation PostgreSQL                | ✅     |
+| Génération des données                 | ✅     |
+| Contrôles qualité des données          | ✅     |
+| Analyse SQL                               | ✅     |
+| Modélisation Power BI                    | ✅     |
+| Mesures DAX                               | ✅     |
+| Tableau de bord Power BI                  | ✅     |
+| Analyse des résultats et recommandations | ✅     |
 
 ---
 
@@ -185,17 +238,13 @@ Les prochaines phases du projet ajouteront notamment la documentation du modèle
 
 La documentation du projet suit les différentes étapes de sa réalisation :
 
-- `docs/01_Kickoff.md` — cadrage initial du projet ;
-- `docs/02_Business_Requirements.md` — besoins métier et KPI ;
-- `docs/03_Design_Review.md` — évolution et validation du modèle de données ;
-- `docs/04_PostgreSQL_Implementation.md` — implémentation PostgreSQL, génération des données, contrôles qualité et analyses SQL.
-
-Les prochaines étapes seront documentées dans :
-
-- `docs/05_PowerBI_Model.md`
-- `docs/06_Dashboard_Design.md`
-
----
+- `docs/01_Kickoff.md` - cadrage initial du projet ;
+- `docs/02_Business_Requirements.md` - besoins métier et définition des KPI ;
+- `docs/03_Design_Review.md` - évolution et validation du modèle de données ;
+- `docs/04_PostgreSQL_Implementation.md` - implémentation PostgreSQL, génération des données, contrôles qualité et analyses SQL ;
+- `docs/05_PowerBI_Model.md` - connexion PostgreSQL, préparation des données, modèle Power BI et mesures DAX ;
+- `docs/06_Dashboard_Design.md` - structure, conception visuelle et choix analytiques du tableau de bord ;
+- `docs/07_Business_Insights.md` - interprétation des résultats, principaux enseignements, recommandations et limites analytiques.
 
 ## À propos de ce projet
 
