@@ -1,78 +1,107 @@
 # Data Analytics & Business Intelligence Portfolio
 
-Bienvenue sur mon portfolio.
+## 👋 Présentation
 
-Je m'appelle Alexandre.
+Bienvenue sur mon portfolio GitHub.
 
-Après plusieurs années d'expérience dans le développement VBA, le reporting, l'automatisation et la qualité des données, j'oriente aujourd'hui mon expérience vers la **Data Analytics** et la **Business Intelligence**.
+Après plusieurs années d'expérience dans le **développement VBA, le reporting, l'automatisation et la qualité des données**, j'oriente aujourd'hui mon parcours professionnel vers la **Data Analytics et la Business Intelligence**.
 
-Ce dépôt documente cette évolution à travers des projets, des exercices techniques et des cas d'étude permettant de mettre en pratique et de démontrer mes compétences en analyse de données et Business Intelligence.
+Ce portfolio présente des projets pratiques et des études de cas illustrant ma capacité à transformer des données en informations exploitables pour accompagner la prise de décision.
+
+À travers ces réalisations, je développe et mets en application des compétences couvrant l'ensemble de la chaîne de traitement des données :
+
+**Collecte → Transformation → Contrôle qualité → Modélisation → Analyse → Visualisation → Automatisation**
+
+Les projets sont organisés par domaine et documentés afin de présenter leur contexte métier, leur architecture technique, leur méthodologie et leurs résultats.
 
 ---
 
-## 🚀 Projets
+## 🚀 Projets phares
 
-### NovaRetail BI
+Cette section présente une sélection de projets représentatifs de mes compétences en Business Intelligence, analyse de données et automatisation.
 
-Projet de Business Intelligence reproduisant un cas d'étude professionnel, de l'analyse du besoin métier jusqu'à la réalisation d'un tableau de bord Power BI.
+### 1. [NovaRetail BI](projects/business-intelligence/NovaRetail-BI/)
 
-Le projet couvre notamment :
-
-- l'analyse du besoin métier ;
-- la définition des KPI ;
-- la modélisation dimensionnelle ;
-- PostgreSQL et SQL ;
-- la qualité des données ;
-- Power BI ;
-- Power Query ;
-- DAX ;
-- l'interprétation des résultats et les recommandations métier ;
-- la documentation technique, fonctionnelle et analytique.
+**Business Intelligence | SQL | PostgreSQL | Power BI**
 
 **Statut :** 🟢 Terminé
 
-📁 `projects/business-intelligence/NovaRetail-BI/`
+Projet de Business Intelligence reproduisant un cas d'étude professionnel, depuis l'analyse du besoin métier jusqu'à la réalisation d'un tableau de bord décisionnel.
 
-Les détails du projet, son architecture et son état d'avancement sont documentés dans son propre `README.md`.
+**Objectifs :**
+- Traduire les besoins métier en indicateurs de performance (KPI).
+- Préparer et contrôler la qualité des données.
+- Concevoir un modèle de données dimensionnel.
+- Développer des analyses SQL.
+- Construire des mesures DAX.
+- Réaliser des tableaux de bord Power BI.
+- Interpréter les résultats et formuler des recommandations métier.
 
----
+**Compétences mobilisées :** PostgreSQL, SQL, Power BI, Power Query, DAX, modélisation dimensionnelle, Data Quality.
 
-## 🧠 Technologies et compétences
-
-Ce portfolio met progressivement en pratique les technologies et compétences suivantes :
-
-### Data & SQL
-
-- SQL
-- PostgreSQL
-- Modélisation dimensionnelle
-- Data Quality
-- Data Cleaning
-
-### Business Intelligence
-
-- Power BI
-- Power Query
-- DAX
-- Data Visualization
-- KPI et analyse métier
-
-### Programmation et automatisation
-
-- Python
-- Pandas
-- VBA
-- Automatisation
-
-### Outils et méthodes
-
-- Git
-- Documentation technique
-- Analyse des besoins métier
+📁 [Consulter le projet NovaRetail BI](projects/business-intelligence/NovaRetail-BI/)
 
 ---
 
-## 📁 Structure du repository
+### 2. [Automated Sales Reporting Pipeline](projects/data-automation/n8n-sales-reporting/)
+
+**Data Automation | n8n | Docker | REST API**
+
+**Statut :** 🟡 En développement
+
+Développement d'un pipeline automatisé destiné à collecter, transformer, contrôler et stocker des données commerciales simulées afin d'alimenter un reporting décisionnel.
+
+**Architecture cible :**
+
+API REST → n8n → Transformation JSON → Validation → PostgreSQL → Power BI
+
+**Fonctionnalités réalisées :**
+- Installation et configuration de n8n avec Docker.
+- Création d'un workflow n8n.
+- Intégration d'une API REST publique.
+- Extraction de données JSON.
+- Exécution et validation du premier workflow.
+- Export et versionnement du workflow.
+
+**Prochaines étapes :**
+- Normalisation des données JSON.
+- Mise en place des contrôles de qualité.
+- Chargement des données dans PostgreSQL.
+- Gestion des erreurs.
+- Automatisation des exécutions.
+- Intégration avec Power BI.
+
+**Technologies :** n8n, Docker, REST API, JSON, PostgreSQL (prévu), Power BI (prévu).
+
+📁 [Consulter le projet Automated Sales Reporting Pipeline](projects/data-automation/n8n-sales-reporting/)
+
+---
+
+## 🧠 Compétences techniques
+
+Les technologies et méthodes ci-dessous sont mobilisées dans mes projets, mes travaux pratiques et mon expérience professionnelle.
+
+| Domaine | Technologies et compétences |
+|---|---|
+| **Business Intelligence** | Power BI, Power Query, DAX, KPI, Data Visualization |
+| **Bases de données** | PostgreSQL, SQL, modélisation dimensionnelle |
+| **Programmation** | Python, Pandas, VBA |
+| **Data Preparation** | Data Cleaning, Data Transformation, Data Quality |
+| **Automatisation** | n8n, automatisation VBA, workflows de données |
+| **Data Integration** | REST API, JSON, ETL |
+| **Environnement technique** | Docker, Git, GitHub |
+| **Méthodologie** | Analyse des besoins métier, documentation, contrôle qualité, analyse et restitution |
+
+Les compétences sont approfondies progressivement à travers des projets concrets.
+
+---
+
+## 📁 Organisation du portfolio
+
+Le dépôt est structuré autour de deux catégories principales :
+
+- **Foundations :** apprentissages, exercices techniques et consolidation des fondamentaux.
+- **Projects :** projets complets et études de cas reproduisant des problématiques professionnelles.
 
 ```text
 data-analytics-portfolio/
@@ -81,36 +110,57 @@ data-analytics-portfolio/
 │   └── sql-analytics/
 │
 ├── projects/
-│   └── business-intelligence/
-│       └── NovaRetail-BI/
+│   ├── business-intelligence/
+│   │   └── NovaRetail-BI/
+│   │
+│   └── data-automation/
+│       └── n8n-sales-reporting/
 │
 ├── assets/
 │
 └── README.md
 ```
 
-### Foundations
+Chaque projet dispose de sa propre documentation présentant :
 
-`foundations/` regroupe les ressources d'apprentissage et les exercices techniques servant de base à la réalisation des projets.
+- Le contexte et les objectifs métier.
+- Les technologies utilisées.
+- L'architecture technique.
+- Les étapes de développement.
+- Les contrôles de qualité.
+- Les résultats obtenus.
+- Les limites et pistes d'amélioration.
 
-### Projects
-
-`projects/` regroupe des projets complets reproduisant des cas d'usage professionnels afin de mettre en pratique les compétences développées dans le portfolio.
-
-Chaque projet possède sa propre documentation décrivant son contexte, ses objectifs, son architecture, les technologies utilisées et les différentes étapes de sa réalisation.
+Cette organisation permet de faire évoluer le portfolio tout en conservant une présentation claire et accessible.
 
 ---
 
-## 🎯 Objectif du portfolio
+## 🎯 Démarche et objectifs
 
-L'objectif de ce portfolio est de présenter une démarche complète d'analyse de données, allant de la compréhension d'un besoin métier jusqu'à la production d'analyses et de solutions décisionnelles.
+Mon approche repose sur une conviction : une solution analytique doit être à la fois **techniquement fiable, compréhensible et utile à la prise de décision**.
 
-Les différents projets permettent progressivement de mettre en pratique :
+Les projets de ce portfolio mettent en pratique une démarche structurée :
 
-- la compréhension et la formalisation des besoins métier ;
-- la préparation et le contrôle de la qualité des données ;
-- la modélisation des données ;
-- l'analyse avec SQL et Python ;
-- la définition et le calcul d'indicateurs de performance ;
-- la conception de modèles et tableaux de bord Power BI ;
-- la restitution d'analyses utiles à la prise de décision.
+1. **Comprendre le besoin métier** et identifier les objectifs.
+2. **Collecter et préparer les données** à partir de différentes sources.
+3. **Contrôler leur qualité** pour fiabiliser les analyses.
+4. **Modéliser et analyser les données** avec les outils appropriés.
+5. **Construire des indicateurs et visualisations** adaptés aux utilisateurs.
+6. **Automatiser les traitements** lorsque cela apporte de la valeur.
+7. **Documenter les solutions** pour faciliter leur compréhension et leur maintenance.
+
+L'objectif est de démontrer des compétences opérationnelles en **Data Analytics, Business Intelligence et automatisation des données**, en m'appuyant sur mon expérience professionnelle et sur des réalisations concrètes.
+
+---
+
+## 📌 Évolution du portfolio
+
+Ce portfolio est enrichi progressivement.
+
+Les projets sont développés, testés, documentés et versionnés avec Git.
+
+La sélection des projets phares sera actualisée au fil des nouvelles réalisations, afin de mettre en avant les travaux les plus représentatifs de mes compétences.
+
+---
+
+*Portfolio Data Analytics & Business Intelligence — Projets, analyses et automatisation des données.*
