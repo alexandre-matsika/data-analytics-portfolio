@@ -6,11 +6,11 @@
       "type": "n8n-nodes-base.manualTrigger",
       "typeVersion": 1,
       "position": [
-        -432,
-        -32
+        -928,
+        -160
       ],
       "id": "c28b44af-e8d7-4a51-b2f5-a5b521dd0b0e",
-      "name": "When clicking ‘Execute workflow’"
+      "name": "Manual Trigger"
     },
     {
       "parameters": {
@@ -20,20 +20,223 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.5,
       "position": [
-        -208,
-        -32
+        -880,
+        64
       ],
       "id": "4cf7bd67-6d69-406e-af20-c903c1676bcd",
-      "name": "HTTP Request"
+      "name": "Fetch Carts API"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "carts",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1.1,
+      "position": [
+        -688,
+        -160
+      ],
+      "id": "dff6d1eb-93e9-4697-b4fd-8f7c5146cfce",
+      "name": "Split Carts"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "da814890-46c1-4345-9c88-56e5638a292a",
+              "name": "cart_id",
+              "value": "={{ $json.id }}",
+              "type": "number"
+            },
+            {
+              "id": "b70e92bb-ae90-4889-be09-b43c34ee9118",
+              "name": "user_Id",
+              "value": "={{ $json.userId }}",
+              "type": "number"
+            },
+            {
+              "id": "beb1b129-e3c7-4196-891f-405d64d2d4dd",
+              "name": "cart_total",
+              "value": "={{ $json.total }}",
+              "type": "number"
+            },
+            {
+              "id": "699c6c86-119e-4194-8ddd-3af78862dfff",
+              "name": "cart_discounted_total",
+              "value": "={{ $json.discountedTotal }}",
+              "type": "number"
+            },
+            {
+              "id": "0ccfb60f-8109-4ce8-8f53-194cb6d7486c",
+              "name": "products",
+              "value": "={{ $json.products }}",
+              "type": "array"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        -544,
+        48
+      ],
+      "id": "e3792423-895e-4bef-aabc-687e9ff4e633",
+      "name": "Map Cart Fields"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "products",
+        "include": "allOtherFields",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1.1,
+      "position": [
+        -400,
+        -160
+      ],
+      "id": "d0140795-6eac-4caa-8b7f-fbeeaf86bcda",
+      "name": "Split Products"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6aea0455-ef0b-4cf4-8e7a-951a54b029d2",
+              "name": "cart_id",
+              "value": "={{ $json.cart_id }}",
+              "type": "number"
+            },
+            {
+              "id": "6a759cd6-862b-4f54-a495-fe9a905926ca",
+              "name": "user_Id",
+              "value": "={{ $json.user_Id }}",
+              "type": "number"
+            },
+            {
+              "id": "a4c8ecd6-22df-4e02-95b1-85dff63717be",
+              "name": "product_id",
+              "value": "={{ $json.products.id }}",
+              "type": "number"
+            },
+            {
+              "id": "e8a26e44-73d5-4a83-8823-cc1de421c2f8",
+              "name": "product_name",
+              "value": "={{ $json.products.title }}",
+              "type": "string"
+            },
+            {
+              "id": "27affbc7-d33a-481f-9764-5c40f933cd7a",
+              "name": "unit_price",
+              "value": "={{ $json.products.price }}",
+              "type": "number"
+            },
+            {
+              "id": "f19b5627-419f-4797-ba05-6847b762db12",
+              "name": "quantity",
+              "value": "={{ $json.products.quantity }}",
+              "type": "number"
+            },
+            {
+              "id": "45528d38-21cd-4370-99b5-229408b00657",
+              "name": "line_total",
+              "value": "={{ $json.products.total }}",
+              "type": "number"
+            },
+            {
+              "id": "4950ed1b-d4cf-4459-80cd-0e6af688c55e",
+              "name": "discount_percentage",
+              "value": "={{ $json.products.discountPercentage }}",
+              "type": "number"
+            },
+            {
+              "id": "d5a73be9-6107-4710-996e-f32ea02f7c15",
+              "name": "line_discounted_total",
+              "value": "={{ $json.products.discountedTotal }}",
+              "type": "number"
+            },
+            {
+              "id": "874a484e-c9d9-47e9-93f9-49b27de234c5",
+              "name": "cart_total",
+              "value": "={{ $json.cart_total }}",
+              "type": "number"
+            },
+            {
+              "id": "929d6814-0eab-4a95-b1e6-8c2646bcd866",
+              "name": "cart_discounted_total",
+              "value": "={{ $json.cart_discounted_total }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        -176,
+        -160
+      ],
+      "id": "21680003-4745-4755-8b20-1bc249958ecd",
+      "name": "Map Product Fields"
     }
   ],
   "pinData": {},
   "connections": {
-    "When clicking ‘Execute workflow’": {
+    "Manual Trigger": {
       "main": [
         [
           {
-            "node": "HTTP Request",
+            "node": "Fetch Carts API",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Carts API": {
+      "main": [
+        [
+          {
+            "node": "Split Carts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Carts": {
+      "main": [
+        [
+          {
+            "node": "Map Cart Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Map Cart Fields": {
+      "main": [
+        [
+          {
+            "node": "Split Products",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Products": {
+      "main": [
+        [
+          {
+            "node": "Map Product Fields",
             "type": "main",
             "index": 0
           }
@@ -46,7 +249,7 @@
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "869f08c9-a1e5-4745-b0b3-97786f44f472",
+  "versionId": "51f02ab0-5709-40e6-852e-83eeea5d07ce",
   "meta": {},
   "nodeGroups": [],
   "id": "Qurea4LbT8k4qLuW",
