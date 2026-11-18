@@ -52,7 +52,7 @@
             },
             {
               "id": "b70e92bb-ae90-4889-be09-b43c34ee9118",
-              "name": "user_Id",
+              "name": "user_id",
               "value": "={{ $json.userId }}",
               "type": "number"
             },
@@ -114,8 +114,8 @@
             },
             {
               "id": "6a759cd6-862b-4f54-a495-fe9a905926ca",
-              "name": "user_Id",
-              "value": "={{ $json.user_Id }}",
+              "name": "user_id",
+              "value": "={{ $json.user_id }}",
               "type": "number"
             },
             {
@@ -249,7 +249,7 @@
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "51f02ab0-5709-40e6-852e-83eeea5d07ce",
+  "versionId": "e8e16c2b-89f6-47ab-ae62-d3b0a32f4c8a",
   "meta": {},
   "nodeGroups": [],
   "id": "Qurea4LbT8k4qLuW",
