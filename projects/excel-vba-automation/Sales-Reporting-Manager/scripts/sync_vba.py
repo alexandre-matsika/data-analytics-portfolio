@@ -1,6 +1,7 @@
 from pathlib import Path
 from datetime import datetime
 from shutil import copy2
+import tempfile
 
 import win32com.client
 
@@ -24,7 +25,7 @@ MODULE_PATH = (
 )
 
 #===========================================
-# SYNCHRONUSATION VBA
+# SYNCHRONISATION VBA
 #===========================================
 
 def sync_vba():
@@ -77,19 +78,38 @@ def sync_vba():
         vb_project = workbook.VBProject
         module_name = MODULE_PATH.stem
 
-        # Recherche d'un module existant
-        for component in vb_project.VBComponents:
-            if component.Name == module_name:
-                vb_project.VBComponents.Remove(
-                    component
-                )
-                break
-        
-        # Importation du module VBA
-        vb_project.VBComponents.Import(
-            str(MODULE_PATH)
+        # Lecture du module VBA en UTF-8
+        source_code = MODULE_PATH.read_text(
+            encoding="utf-8"
         )
 
+        # Création d'un répertoire temporaire
+        with tempfile.TemporaryDirectory() as temp_dir:
+
+            # Chemin du module VBA temporaire
+            temp_module_path = (
+                Path(temp_dir)
+                / MODULE_PATH.name
+            )
+
+            # Conversion vers l'encodage Windows
+            temp_module_path.write_text(
+                source_code,
+                encoding="cp1252"
+            )
+
+            # Recherche d'un module existant
+            for component in vb_project.VBComponents:
+                if component.Name == module_name:
+                    vb_project.VBComponents.Remove(
+                        component
+                    )
+                    break
+            
+            # Importation du module VBA temporaire
+            vb_project.VBComponents.Import(
+                str(temp_module_path)
+            )
         # Enregistrement
         workbook.Save()
 
