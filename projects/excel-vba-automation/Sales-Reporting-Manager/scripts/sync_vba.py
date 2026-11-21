@@ -117,12 +117,16 @@ def sync_vba():
 
     except Exception as error:
         print(f"Erreur : {error}")
-    finally:
-        if workbook is not None:
-            workbook.Close(SaveChanges=False)
+        raise
 
-        if excel is not None:
-            excel.Quit()
+    finally:
+        try:
+            if workbook is not None:
+                workbook.Close(SaveChanges=False)
+
+        finally:
+            if excel is not None:
+                excel.Quit()
 
 if __name__ == "__main__":
     sync_vba()
